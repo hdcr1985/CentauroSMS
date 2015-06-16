@@ -28,6 +28,9 @@ class CentauroSMS {
 
        return $result_data = cSMSClient::post("/controllersms/", $credenciales, "application/x-www-form-urlencoded");		
     }
+    /**
+     * Envio de SMS Masivos normales
+     */    
     public function set_sms_send($json,$msg) {
        $credenciales = $this->cParametros(array(
             'client_id' => $this->client_id,
@@ -37,8 +40,19 @@ class CentauroSMS {
 			'client_opcion' => 'send_sms'));
 
        return $result_data = cSMSClient::post("/controllersms/", $credenciales, "application/x-www-form-urlencoded");		
-    }	
+    }
+    /**
+     * Envio de SMS Masivos personalizados
+     */     	
+    public function set_sms_send_personalizado($json){
+       $credenciales = $this->cParametros(array(
+            'client_id' => $this->client_id,
+            'client_secret' => $this->client_secret,
+            'json' => base64_encode(urlencode($json)),
+            'client_opcion' => 'send_sms_personalizado'));
 
+       return $result_data = cSMSClient::post("/controllersms/", $credenciales, "application/x-www-form-urlencoded");     
+    }  
     private function cParametros($params) {
         if (function_exists("http_build_query")) {
             return http_build_query($params, "", "&");
