@@ -6,8 +6,10 @@ Para la integracion de la API en su website debe copiar la carpeta "lib" en el d
 Para obtener las credenciales para utilizar la API debe registrarse en http://www.centaurosms.com.ve
 
 ```php
-#Include de la API de Centauro SMS
+#Include de la API de Centauro SMS PHP
 include_once ("lib/centaurosms.php");
-$SMS = new CentauroSMS('user_credencial', 'secret_credencial');
+$SMS = new CentauroSMS('codigo_credencial', 'codigo_secreto_credencial');
+
+#Para enviar un SMS normal (Mensaje unico para uno o varios remitentes) debe armar un JSON para enviarlo al Servidor con la siguiente estructura
 
 ```
