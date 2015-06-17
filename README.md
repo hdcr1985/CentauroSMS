@@ -17,11 +17,42 @@ $destinatarios = array("id" => "0","cel" => "04140000000","nom" => "Pedro Perez"
 $msg = 'Mensaje de prueba';
 $js = json_encode($destinatarios);
 $result = $SMS->set_sms_send($js,$msg); // Comando para enviar SMS Normales
-var_dump($result);
+echo json_encode($result);
 ```
 Respuesta
-```json
+```php
 {"status":"200","response":[{"datos":[{"Nom":"Pedro Perez","Cel":"04140000000","Messageid":"7603178","StatusText":"Message accepted for delivery","Msg":"Mensaje de prueba"}]}]}
+```
+var_dump de la respuesta
+```php
+var_dump($result);
+
+array(2) {
+  ["status"]=>
+  string(3) "200"
+  ["response"]=>
+  array(1) {
+    [0]=>
+    array(1) {
+      ["datos"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["Nom"]=>
+          string(13) "Pedro Perez"
+          ["Cel"]=>
+          string(10) "4140000000"
+          ["Messageid"]=>
+          string(7) "8760365"
+          ["StatusText"]=>
+          string(29) "Message accepted for delivery"
+          ["Msg"]=>
+          string(29) "Mensaje de prueba"
+        }
+      }
+    }
+  }
+}
 ```
 
 ```php
