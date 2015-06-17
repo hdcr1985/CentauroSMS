@@ -51,7 +51,7 @@ array(2) {
   }
 }
 ```
-###Tratamiento de la respuesta del servidor
+Tratamiento de la respuesta del servidor
 
 ```php
 $result = $SMS->set_sms_send($js,$msg); // Comando para enviar SMS Normales
@@ -61,15 +61,66 @@ if ($result['status']=='200'){ // Donde 200 es el codigo de una conexion exitosa
   $nombre = $result['response'][0]['datos'][0]['Nom'];
   $celular = $result['response'][0]['datos'][0]['Cel'];
   $Messageid = $result['response'][0]['datos'][0]['Messageid'];
-  $StatusText = $result['response'][0]['datos'][0]['Messageid'];
-  $Msg = $result['response'][0]['datos'][0]['Messageid'];
+  $StatusText = $result['response'][0]['datos'][0]['StatusText'];
+  $Msg = $result['response'][0]['datos'][0]['Msg'];
 }
 ```
-
+### Otra forma de enviar SMS con string JSON varios destinatarios
 ```php
 # Otra forma de enviar SMS armando un String JSON
-$js = '{"id":"0","cel":"04140000000","nom":"Pedro Perez"},{"id":"0","cel":"04240000000","nom":"Jose Perez"}';
+$js = '{"id":"0","cel":"04140000000","nom":"Pedro Perez"},{"id":"0","cel":"584240000000","nom":"Jose Perez"}';
 $msg = 'Mensaje de prueba 2';
 $result = $SMS->set_sms_send($js,$msg); // Comando para enviar SMS Normales varios destinatarios
 
+```
+Respuesta
+```php
+{"status":"200","response":[{"datos":[{"Nom":"Pedro Perez","Cel":"4140000000","Messageid":"7603178","StatusText":"Message accepted for delivery","Msg":"Mensaje de prueba"},{"Nom":"Jose Perez","Cel":"4240000000","Messageid":"7603179","StatusText":"Message accepted for delivery","Msg":"Mensaje de prueba"}]}]}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "200"
+  ["response"]=>
+  array(2) {
+    [0]=>
+    array(1) {
+      ["datos"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["Nom"]=>
+          string(13) "Pedro Perez"
+          ["Cel"]=>
+          string(10) "4140000000"
+          ["Messageid"]=>
+          string(7) "7603178"
+          ["StatusText"]=>
+          string(29) "Message accepted for delivery"
+          ["Msg"]=>
+          string(29) "Mensaje de prueba"
+        }
+      }
+    }
+    [1]=>
+    array(1) {
+      ["datos"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["Nom"]=>
+          string(13) "Jos Perez"
+          ["Cel"]=>
+          string(10) "4240000000"
+          ["Messageid"]=>
+          string(7) "7603179"
+          ["StatusText"]=>
+          string(29) "Message accepted for delivery"
+          ["Msg"]=>
+          string(29) "Mensaje de prueba"
+        }
+      }
+    }    
+  }
+}
 ```
