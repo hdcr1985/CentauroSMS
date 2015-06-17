@@ -1,6 +1,6 @@
 <?php
 /**
- * Libreria de Integracion CentauroSMS
+ * Libreria de Integracion CentauroSMS v1.2
  * API para Integracion de Envios de SMS a cualquier Aplicacion Web
  * 
  * @autor Hernan Crespo
