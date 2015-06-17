@@ -218,10 +218,11 @@ array(2) {
 }
 ```
 
-Tratamiento de la respuesta del servidor
+### Tratamiento de la respuesta del servidor
 
 ```php
 $result = $SMS->set_sms_send($js,$msg); // Comando para enviar SMS Normales
+$result = $SMS->set_sms_send_personalizado($js); // Comando para enviar SMS Personalizados
 
 if ($result['status']=='200'){ // Donde 200 es el codigo de una conexion exitosa con el servidor
   // Variables
@@ -231,4 +232,34 @@ if ($result['status']=='200'){ // Donde 200 es el codigo de una conexion exitosa
   $StatusText = $result['response'][0]['datos'][0]['StatusText'];
   $Msg = $result['response'][0]['datos'][0]['Msg'];
 }
+```
+### Codigos de respuesta del servidor
+
+```php
+if ($result['status']=='305'){ echo "No tiene SMS disponibles para realizar este envio";}
+if ($result['status']=='304'){ echo "Los parametros no son correctos por favor no modifique la API";}
+if ($result['status']=='303'){ echo "Error grave no se recibio parametro de la API";}
+if ($result['status']=='302'){ echo "Servidores fuera de linea";}
+if ($result['status']=='301'){ echo "Error de credenciales";}
+if ($result['status']=='300'){ echo "No se recibieron los parametros necesarios";}
+
+```
+JSON Respuesta de error
+```php
+{"status":"305","response":{"error":"No tiene SMS disponibles para realizar este envio"}}
+```
+```php
+{"status":"304","response":{"error":"Los parametros no son correctos por favor no modifique la API"}}
+```
+```php
+{"status":"303","response":{"error":"Error grave no se recibio parametro de la API"}}
+```
+```php
+{"status":"302","response":{"error":"Servidores fuera de linea"}}
+```
+```php
+{"status":"301","response":{"error":"Error de credenciales"}}
+```
+```php
+{"status":"300","response":{"error":"No se recibieron los parametros necesarios"}}
 ```
