@@ -23,10 +23,7 @@ Respuesta
 ```php
 {"status":"200","response":[{"datos":[{"Nom":"Pedro Perez","Cel":"04140000000","Messageid":"7603178","StatusText":"Message accepted for delivery","Msg":"Mensaje de prueba"}]}]}
 ```
-var_dump de la respuesta
 ```php
-var_dump($result);
-
 array(2) {
   ["status"]=>
   string(3) "200"
@@ -52,6 +49,20 @@ array(2) {
       }
     }
   }
+}
+```
+###Tratamiento de la respuesta del servidor
+
+```php
+$result = $SMS->set_sms_send($js,$msg); // Comando para enviar SMS Normales
+
+if ($result['status']=='200'){ // Donde 200 es el codigo de una conexion exitosa con el servidor
+  // Variables
+  $nombre = $result['response'][0]['datos'][0]['Nom'];
+  $celular = $result['response'][0]['datos'][0]['Cel'];
+  $Messageid = $result['response'][0]['datos'][0]['Messageid'];
+  $StatusText = $result['response'][0]['datos'][0]['Messageid'];
+  $Msg = $result['response'][0]['datos'][0]['Messageid'];
 }
 ```
 
