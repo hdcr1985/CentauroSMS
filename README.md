@@ -263,3 +263,70 @@ JSON Respuesta de error
 ```php
 {"status":"300","response":{"error":"No se recibieron los parametros necesarios"}}
 ```
+ARRAY Respuesta de error
+```php
+array(2) {
+  ["status"]=>
+  string(3) "305"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "No tiene SMS disponibles para realizar este envio"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "304"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "Los parametros no son correctos por favor no modifique la API"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "303"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "Error grave no se recibio parametro de la API"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "302"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "Servidores fuera de linea"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "301"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "Error de credenciales"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "300"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "No se recibieron los parametros necesarios"
+  }
+}
+```
