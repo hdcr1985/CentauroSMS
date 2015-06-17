@@ -9,7 +9,7 @@ y poseer un plan de SMS activo, validos para Venezuela ó Colombia.
 ```php
 #Include de la API de Centauro SMS PHP
 include_once ("lib/centaurosms.php");
-$SMS = new CentauroSMS('codigo_credencial', 'codigo_secreto_credencial');
+$SMS = new CentauroSMS('id_credencial', 'codigo_secreto_credencial');
 
 #Para enviar un SMS normal (Mensaje unico para uno o varios remitentes) debe armar un JSON para enviarlo al 
 #servidor con la siguiente estructura
