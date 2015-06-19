@@ -241,7 +241,7 @@ array(2) {
   ["response"]=>
   array(1) {
     ["sms_disponibles"]=>
-    string(4) "1875"
+    string(4) "500"
   }
 }
 ```
