@@ -218,6 +218,16 @@ array(2) {
   }
 }
 ```
+### Acceder a la cantidad de SMS disponibles
+
+```php
+#Include de la API de Centauro SMS PHP
+include_once ("lib/centaurosms.php");
+$SMS = new CentauroSMS('id_credencial', 'codigo_secreto_credencial');
+$SMS_disponibles = $SMS->get_sms_disponibles(); 
+
+echo $SMS_disponibles['response']['sms_disponibles'];
+```
 
 ### Tratamiento de la respuesta del servidor
 
