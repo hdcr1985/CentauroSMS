@@ -228,6 +228,23 @@ $SMS_disponibles = $SMS->get_sms_disponibles();
 
 echo $SMS_disponibles['response']['sms_disponibles'];
 ```
+Respuesta
+
+```php
+{"status":"200","response":{"sms_disponibles":"500"}}
+```
+
+```php
+array(2) {
+  ["status"]=>
+  string(3) "200"
+  ["response"]=>
+  array(1) {
+    ["sms_disponibles"]=>
+    string(4) "1875"
+  }
+}
+```
 
 ### Tratamiento de la respuesta del servidor
 
