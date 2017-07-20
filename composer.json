@@ -1,0 +1,17 @@
+{
+    "name": "centauro-sms/centauro-sms",
+    "description": "API para integrar envío de SMS masivos en cualquier website.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Angel Cruz",
+        "email": "me@abr4xas.org"
+    }],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "centauroSMS\\": "src/"
+        }
+    }
+}
