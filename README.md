@@ -360,3 +360,39 @@ array(2) {
   }
 }
 ```
+### Integración de API en cualquier lenguaje de programación mediante peticiones HTTP
+```php
+http://api.centaurosms.com.ve/http/?client_id=id_credencial&client_secret=codigo_secreto_credencial&client_opcion=send_sms&num=04140000000&msg=MENSAJE DE PRUEBA HTTP
+
+```
+Respuesta
+```php
+{"status":"200","response":[{"datos":[{"Nom":"","Cel":"04140000000","Messageid":"7603178","StatusText":"Message accepted for delivery","Msg":"MENSAJE DE PRUEBA HTTP"}]}]}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "200"
+  ["response"]=>
+  array(1) {
+    [0]=>
+    array(1) {
+      ["datos"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["Nom"]=>
+          string(13) ""
+          ["Cel"]=>
+          string(10) "4140000000"
+          ["Messageid"]=>
+          string(7) "7603178"
+          ["StatusText"]=>
+          string(29) "Message accepted for delivery"
+          ["Msg"]=>
+          string(29) "MENSAJE DE PRUEBA HTTP"
+        }
+      }
+    }
+  }
+}
