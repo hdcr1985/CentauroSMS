@@ -1,4 +1,4 @@
-# CentauroSMS v1.2
+# CentauroSMS v1.2.1
 API para integrar envió de SMS masivos en cualquier website. 
 
 Actualización: Para que los ejemplos puedan funcionar sin ningun problema su servidor local o hosting debe tener activadas las librerias cURL.
