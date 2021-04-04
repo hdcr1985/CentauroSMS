@@ -71,10 +71,12 @@ class CentauroSMS {
  */
 class cSMSClient{
 
-    const API_BASE_URL = "http://api.centaurosms.com.ve";
+    const API_BASE_URL = "https://api.centaurosms.com.ve";
 
     private static function get_connect($uri, $method, $content_type) {
         $connect = curl_init(self::API_BASE_URL . $uri);
+        curl_setopt($connect, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($connect, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($connect, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($connect, CURLOPT_CUSTOMREQUEST, $method);
         curl_setopt($connect, CURLOPT_HTTPHEADER, array("Accept: application/json", "Content-Type: " . $content_type));
