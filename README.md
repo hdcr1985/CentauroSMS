@@ -266,6 +266,8 @@ if ($result['status']=='200'){ // Donde 200 es el codigo de una conexion exitosa
 ### Codigos de respuesta del servidor
 
 ```php
+if ($result['status']=='307'){ echo "No hay contactos validos en su array";}
+if ($result['status']=='306'){ echo "Error interno, por favor contactenos";}
 if ($result['status']=='305'){ echo "No tiene SMS disponibles para realizar este envio";}
 if ($result['status']=='304'){ echo "Los parametros no son correctos por favor no modifique la API";}
 if ($result['status']=='303'){ echo "Error grave no se recibio parametro de la API";}
@@ -275,6 +277,12 @@ if ($result['status']=='300'){ echo "No se recibieron los parametros necesarios"
 
 ```
 JSON Respuesta de error
+```php
+{"status":"307","response":{"error":"No hay contactos validos en su array"}}
+```
+```php
+{"status":"306","response":{"error":"Error interno, por favor contactenos"}}
+```
 ```php
 {"status":"305","response":{"error":"No tiene SMS disponibles para realizar este envio"}}
 ```
@@ -294,6 +302,28 @@ JSON Respuesta de error
 {"status":"300","response":{"error":"No se recibieron los parametros necesarios"}}
 ```
 ARRAY Respuesta de error
+```php
+array(2) {
+  ["status"]=>
+  string(3) "307"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "No hay contactos validos en su array"
+  }
+}
+```
+```php
+array(2) {
+  ["status"]=>
+  string(3) "306"
+  ["response"]=>
+  array(1) {
+    ["error"]=>
+    string(21) "Error interno, por favor contactenos"
+  }
+}
+```
 ```php
 array(2) {
   ["status"]=>
