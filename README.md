@@ -5,7 +5,7 @@ Actualización: Para que los ejemplos puedan funcionar sin ningun problema su se
 
 Para la integracion de la API en su website debe copiar la carpeta "lib" en el directorio de su sitio. 
 
-Para obtener las credenciales para utilizar la API debe registrarse en http://www.centaurosms.com.ve 
+Para obtener las credenciales para utilizar la API debe registrarse en https://www.centaurosms.com.ve 
 y poseer un plan de SMS activo, validos para Venezuela ó Colombia.
 
 ```php
